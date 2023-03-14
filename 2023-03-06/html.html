@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+        function a() {
+            const target = document.getElementById('demo');
+
+                target.innerHTML = "알림메세지가 표시 되었습니다.";
+                alert('알림메세지가 표시 되었습니다.');
+        }
+        
+    </script>
+</head>
+<body>
+    <p id="demo">버튼을 눌러주세요.</p>
+    <input type="button" value="Click!" onclick="a()" id="target_btn">
+</body>
+</html>
