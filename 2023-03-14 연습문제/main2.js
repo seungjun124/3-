@@ -1,5 +1,4 @@
-let text = parseInt(prompt('숫자를 입력하세요.'));
-let text2 = parseInt(prompt('숫자를 입력하세요.'));
+var [text, text2] = prompt("두 숫자를 입력하세요. 예시)100 200").split(" ")
 let arr = [];
 let arr2 = [];
 let arr3 = [];
