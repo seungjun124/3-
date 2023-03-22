@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+/* 짝수 */
+ul li:nth-of-type(2n) {
+    border: 1px solid blue;
+}
+/* 홀수 */
+ul li:nth-of-type(2n-1) {
+    border: 1px solid red;
+}
+/* 마지막 */
+ul li:last-child {
+    border: 1px solid green;
+}
