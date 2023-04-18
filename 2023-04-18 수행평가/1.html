@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Name</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+          display: flex;
+          flex-direction: column; /* 세로 배치 */
+          justify-content: center; /* 요소들을 가로 중앙 정렬 */
+          align-items: center;  /* 요소들을 세로 중앙 정렬 */
+          height: 100vh;
+        }
+        #container {
+          display:flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 300px;
+          border:1px solid #ccc;
+          border-radius: 8px;
+        }
+
+        #result {
+            text-align: center;
+        }
+      </style>
+</head>
+<body>
+
+    <div id="container">
+        <h1>상품 정보</h1>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        $.get("https://reqres.in/api/products/10", function(data) {
+            var productName = data.data.name;
+            var productYear = data.data.year;
+            
+            $("#result").append(productName + "<br><br>" + productYear);
+        });
+    </script>
+</body>
+</html>
