@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>상품 정보 가져오기</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column; /* 세로 배치 */
+      justify-content: center; /* 요소들을 가로 중앙 정렬 */
+      align-items: center;  /* 요소들을 세로 중앙 정렬 */
+      height: 100vh;
+    }
+    #user-number {
+      width: 60%;
+      padding: 10px 5px;
+      border: 1px solid #ccc;
+    }
+    button {
+      width: 32%;
+      padding: 8px 15px;
+      margin-left: 5px;
+    }
+    #result {
+      margin-top: 30px;
+      width: 100%;
+      text-align: center;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <h1>10보다 작은 숫자를 입력하세요</h1>
+    <label>
+      <input type="text" id="user-number">
+    </label>
+    <button>입력</button> 
+  
+    <div id="result"></div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    $(document).ready(function() {
+        $("button").click(function() {
+            var userInput = $("#user-number").val(); 
+            try {
+                if (userInput < 10) { 
+                    $("#result").html(userInput);
+                } else {
+                    throw "10보다 작은 수 입력해라";
+                }
+            } catch (error) {
+                alert(error); 
+            } finally {
+                $("#user-number").val('');
+            }
+        });
+    });
+  </script>
+</body>
+</html>
