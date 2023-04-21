@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin:0;
+            padding:0;
+        }
+        body {
+            height:100vh;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+        #container{
+            padding:20px;
+            border:1px solid #ccc;
+            border-radius: 14px;
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: left;
+        }
+        #container div {
+            margin:10px;
+        }
+        #today {
+            font-size:1.2em;
+        }
+        #clock {
+            font-size:1em;
+        }
+    </style>
+</head>
+<body>
+  <div id="container">
+    <div id="clock">
+      <span id="hour">00</span>:
+      <span id="minute">00</span>:
+      <span id="second">00</span>
+    </div>
+
+  </div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function() {
+  function updateClock() {
+    var now = new Date();
+    var hour = now.getHours();
+    var minute = now.getMinutes();
+    var second = now.getSeconds();
+    
+    if (hour < 10) {
+      hour = '0' + hour;
+    }
+    if (minute < 10) {
+      minute = '0' + minute;
+    }
+    if (second < 10) {
+      second = '0' + second;
+    }
+    $('#hour').text(hour);
+    $('#minute').text(minute);
+    $('#second').text(second);
+  }
+  updateClock();
+  setInterval(updateClock, 1000);
+});
+</script>
+</body>
+</html>
